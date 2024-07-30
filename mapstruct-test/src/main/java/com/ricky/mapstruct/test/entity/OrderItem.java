@@ -4,6 +4,8 @@ import com.ricky.mapstruct.test.marker.Entity;
 import com.ricky.mapstruct.test.types.OrderItemId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 /**
  * @author Ricky
@@ -13,6 +15,7 @@ import lombok.Data;
  * @desc
  */
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class OrderItem implements Entity<OrderItemId> {
 

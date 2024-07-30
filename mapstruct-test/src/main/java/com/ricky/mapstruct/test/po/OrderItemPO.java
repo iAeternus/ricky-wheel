@@ -1,7 +1,9 @@
 package com.ricky.mapstruct.test.po;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Ricky
@@ -11,6 +13,8 @@ import lombok.EqualsAndHashCode;
  * @desc
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class OrderItemPO extends BasePO {
 

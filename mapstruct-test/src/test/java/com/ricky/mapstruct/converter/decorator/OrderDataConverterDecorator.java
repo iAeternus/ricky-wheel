@@ -1,4 +1,4 @@
-package com.ricky.mapstruct.converter;
+package com.ricky.mapstruct.converter.decorator;
 
 import java.util.Currency;
 

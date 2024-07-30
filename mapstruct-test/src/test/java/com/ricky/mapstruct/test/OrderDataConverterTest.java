@@ -1,16 +1,15 @@
 package com.ricky.mapstruct.test;
 
-import com.ricky.mapstruct.assembler.OrderAssembler;
-import com.ricky.mapstruct.converter.OrderDataConverter;
+import com.ricky.mapstruct.converter.impl.OrderDataConverter;
 import com.ricky.mapstruct.test.aggregate.Order;
 import com.ricky.mapstruct.test.entity.OrderItem;
+import com.ricky.mapstruct.test.po.OrderItemPO;
 import com.ricky.mapstruct.test.po.OrderPO;
 import com.ricky.mapstruct.test.types.Money;
 import com.ricky.mapstruct.test.types.OrderId;
 import com.ricky.mapstruct.test.types.OrderItemId;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Or;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -28,10 +27,17 @@ public class OrderDataConverterTest {
 
     private final OrderDataConverter orderDataConverter = OrderDataConverter.INSTANCE;
 
+    private static final List<OrderItemPO> ORDER_ITEM_PO_LIST = new ArrayList<>();
     private static final List<OrderItem> ORDER_ITEMS = new ArrayList<>();
 
     @BeforeAll
     public static void init() {
+        ORDER_ITEM_PO_LIST.add(new OrderItemPO(1L, 1L, "aaa", 10));
+        ORDER_ITEM_PO_LIST.add(new OrderItemPO(2L, 1L, "bbb", 11));
+        ORDER_ITEM_PO_LIST.add(new OrderItemPO(3L, 1L, "ccc", 12));
+        ORDER_ITEM_PO_LIST.add(new OrderItemPO(4L, 1L, "ddd", 13));
+        ORDER_ITEM_PO_LIST.add(new OrderItemPO(5L, 1L, "eee", 14));
+
         ORDER_ITEMS.add(new OrderItem(new OrderItemId(1L), "aaa", 10));
         ORDER_ITEMS.add(new OrderItem(new OrderItemId(2L), "bbb", 11));
         ORDER_ITEMS.add(new OrderItem(new OrderItemId(3L), "ccc", 12));
@@ -66,7 +72,7 @@ public class OrderDataConverterTest {
         orderPO.setUpdateTime(now);
 
         // When
-        Order aggregate = orderDataConverter.toAggregate(orderPO, ORDER_ITEMS);
+        Order aggregate = orderDataConverter.toEntity(orderPO, ORDER_ITEM_PO_LIST);
 
         // Then
         System.out.println(aggregate);

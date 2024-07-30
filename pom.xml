@@ -20,6 +20,7 @@
     <modules>
         <module>operate-log</module>
         <module>mapstruct-test</module>
+        <module>ioc</module>
     </modules>
 
     <properties>
