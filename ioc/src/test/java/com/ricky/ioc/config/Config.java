@@ -5,9 +5,6 @@ import com.ricky.ioc.model.Address;
 import com.ricky.ioc.model.Customer;
 import com.ricky.ioc.model.Message;
 
-import java.lang.reflect.Member;
-import java.util.Currency;
-
 /**
  * @author Ricky
  * @version 1.0

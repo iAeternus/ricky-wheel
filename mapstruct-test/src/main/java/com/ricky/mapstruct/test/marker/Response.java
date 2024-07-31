@@ -1,7 +1,5 @@
 package com.ricky.mapstruct.test.marker;
 
-import com.ricky.mapstruct.test.marker.DTO;
-
 /**
  * @author Ricky
  * @version 1.0

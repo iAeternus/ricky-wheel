@@ -1,10 +1,7 @@
 package com.ricky.ioc.model;
 
 import com.ricky.ioc.annotation.Autowired;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  * @author Ricky

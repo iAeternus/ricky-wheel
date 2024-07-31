@@ -37,6 +37,7 @@ public class Container {
 
     /**
      * 初始化Container对象
+     *
      * @param configClassName 目标对象全类名
      */
     public void init(String configClassName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
@@ -56,11 +57,12 @@ public class Container {
 
     /**
      * 根据字节码获取Bean对象
+     *
      * @param clazz 目标字节码
      * @return Bean对象
      */
     public Object getBeanInstanceByClass(Class<?> clazz) throws InvocationTargetException, IllegalAccessException {
-        if(this.beans.containsKey(clazz)) {
+        if (this.beans.containsKey(clazz)) {
             return this.beans.get(clazz);
         }
 
@@ -76,7 +78,7 @@ public class Container {
     public Object createInstance(Class<?> clazz) throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
         Constructor<?>[] constructors = clazz.getDeclaredConstructors();
         for (Constructor<?> constructor : constructors) {
-            if(constructor.getDeclaredAnnotation(Autowired.class) != null) {
+            if (constructor.getDeclaredAnnotation(Autowired.class) != null) {
                 Class<?>[] parameterTypes = constructor.getParameterTypes();
                 Object[] arguments = new Object[parameterTypes.length];
                 for (int i = 0; i < parameterTypes.length; i++) {

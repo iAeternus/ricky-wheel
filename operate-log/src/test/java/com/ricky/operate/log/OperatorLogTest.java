@@ -3,12 +3,10 @@ package com.ricky.operate.log;
 import com.ricky.operate.log.model.SaveOrder;
 import com.ricky.operate.log.model.UpdateOrder;
 import com.ricky.operate.log.service.OrderService;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * @author Ricky
@@ -18,7 +16,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @desc
  */
 @SpringBootApplication
-public class OperatorLogTest implements CommandLineRunner{
+public class OperatorLogTest implements CommandLineRunner {
 
     @Autowired
     private OrderService orderService;

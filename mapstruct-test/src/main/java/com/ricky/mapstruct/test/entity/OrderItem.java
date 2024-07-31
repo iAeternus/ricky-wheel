@@ -5,7 +5,6 @@ import com.ricky.mapstruct.test.types.OrderItemId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  * @author Ricky

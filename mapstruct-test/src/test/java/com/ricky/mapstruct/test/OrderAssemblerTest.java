@@ -10,8 +10,6 @@ import com.ricky.mapstruct.test.types.OrderId;
 import com.ricky.mapstruct.test.types.OrderItemId;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -39,7 +39,7 @@ public class IOCTest {
         // System.out.println(fieldValue);
 
         for (Method method : methods) {
-            if(method.getDeclaredAnnotation(Printable.class) != null) {
+            if (method.getDeclaredAnnotation(Printable.class) != null) {
                 method.invoke(fieldValue);
             }
         }

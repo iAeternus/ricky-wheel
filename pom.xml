@@ -21,6 +21,7 @@
         <module>operate-log</module>
         <module>mapstruct-test</module>
         <module>ioc</module>
+        <module>stream-api-test</module>
     </modules>
 
     <properties>
