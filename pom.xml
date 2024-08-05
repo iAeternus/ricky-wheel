@@ -22,6 +22,9 @@
         <module>mapstruct-test</module>
         <module>ioc</module>
         <module>stream-api-test</module>
+        <module>ddd-repository-framework</module>
+        <module>ddd-event-framework</module>
+        <module>aho-corasick-automaton</module>
     </modules>
 
     <properties>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ricky.common.ddd.mapper.BookImageMapper">
+
+    <insert id="insertBatch">
+        insert into book_image (book_id, image_url)
+        values
+        <foreach collection="bookImagePOS" item="bookImagePO" separator=",">
+            (#{bookImagePO.bookId}, #{bookImagePO.imageUrl})
+        </foreach>
+    </insert>
+
+    <insert id="insert">
+        insert into book_image (book_id, image_url) values (#{bookId}, #{imageUrl})
+    </insert>
+
+</mapper>

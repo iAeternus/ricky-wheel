@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: ${datasource.driver-class-name}
+    url: jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${datasource.username}
+    password: ${datasource.password}
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.ricky.common.ddd.model.po
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+mybatis-plus:
+  type-aliases-package: com.ricky.common.ddd.model.po
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
