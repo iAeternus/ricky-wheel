@@ -43,6 +43,7 @@ public class AggregateDifference<T extends Aggregate<ID>, ID extends Identifier>
 
     /**
      * 判断聚合是否被修改
+     *
      * @param clazz 聚合字节码
      * @return 若聚合被修改则返回true，否则返回false
      */
@@ -50,7 +51,7 @@ public class AggregateDifference<T extends Aggregate<ID>, ID extends Identifier>
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {
             FieldDifference fieldDifference = fieldDifferences.get(field.getName());
-            if(fieldDifference != null && fieldDifference.getDifferenceType() != DifferenceType.UNTOUCHED) {
+            if (fieldDifference != null && fieldDifference.getDifferenceType() != DifferenceType.UNTOUCHED) {
                 return true;
             }
         }

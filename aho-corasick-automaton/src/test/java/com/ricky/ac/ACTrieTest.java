@@ -1,6 +1,5 @@
 package com.ricky.ac;
 
-import com.ricky.ac.ACTrie;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;

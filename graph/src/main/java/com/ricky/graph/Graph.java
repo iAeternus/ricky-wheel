@@ -715,7 +715,7 @@ public class Graph<ID, V> {
         Graph<ID, V> minSpanningTree = createMinSpanningTree();
 
         // 构造并查集
-        UnionFind<ID> unionFind = new UnionFind<>(getVertices().stream()
+        DisjointSet<ID> disjointSet = new DisjointSet<>(getVertices().stream()
                 .map(Vertex::getId)
                 .toList());
 
@@ -725,9 +725,9 @@ public class Graph<ID, V> {
         edges.sort(Comparator.comparingDouble((Edge o) -> o.weight));
 
         for (Edge edge : edges) {
-            if (isCross(unionFind, edge)) {
+            if (isCross(disjointSet, edge)) {
                 minSpanningTree.addEdge(edge.getBegin(), edge.getEnd(), edge.getWeight());
-                unionFind.union(edge.getBegin(), edge.getEnd());
+                disjointSet.union(edge.getBegin(), edge.getEnd());
             }
         }
 
@@ -737,12 +737,12 @@ public class Graph<ID, V> {
     /**
      * 判断一条边是否为“横跨”
      *
-     * @param unionFind 并查集
-     * @param edge      边
+     * @param disjointSet 并查集
+     * @param edge        边
      * @return 如果为“横跨”返回true，否则返回false
      */
-    private boolean isCross(UnionFind<ID> unionFind, Edge edge) {
-        return unionFind.find(edge.getBegin()) != unionFind.find(edge.getEnd());
+    private boolean isCross(DisjointSet<ID> disjointSet, Edge edge) {
+        return disjointSet.find(edge.getBegin()) != disjointSet.find(edge.getEnd());
     }
 
     /**

@@ -9,8 +9,6 @@ import com.ricky.common.ddd.support.RepositorySupport;
 import jakarta.annotation.Resource;
 
 import java.io.Serializable;
-import java.rmi.MarshalledObject;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,7 +30,7 @@ public class RepositoryImpl<T extends Aggregate<ID>, ID extends Identifier, PO e
     protected T doSelect(ID id) {
         Serializable identifier = id.getValue();
         PO po = aggregateMapper.selectById(identifier);
-        if(po == null) {
+        if (po == null) {
             throw new RuntimeException("Query result not found, id=" + identifier);
         }
 

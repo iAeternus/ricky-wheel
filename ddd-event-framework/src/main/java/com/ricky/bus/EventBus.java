@@ -5,7 +5,6 @@ import com.ricky.handler.EventHandler;
 import com.ricky.model.Event;
 import com.ricky.model.SubscribedMethod;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -19,31 +18,35 @@ public interface EventBus {
 
     /**
      * 发布事件
+     *
      * @param event 事件
-     * @param <E> 扩展自领域事件
+     * @param <E>   扩展自领域事件
      */
     <E extends Event> void publish(E event);
 
     /**
      * 订阅特定类型的事件
+     *
      * @param eventType 领域事件派生类的字节码
-     * @param handler 事件处理器
-     * @param <E> 扩展自领域事件
+     * @param handler   事件处理器
+     * @param <E>       扩展自领域事件
      */
     <E extends Event> void subscribe(Class<E> eventType, EventHandler<E> handler);
 
     /**
      * 取消订阅特定类型的事件和处理器
+     *
      * @param eventType 领域事件派生类的字节码
-     * @param handler 事件处理器
-     * @param <E> 扩展自领域事件
+     * @param handler   事件处理器
+     * @param <E>       扩展自领域事件
      * @return 若成功取消订阅返回true，否则返回false
      */
     <E extends Event> boolean unsubscribe(Class<E> eventType, EventHandler<E> handler);
 
     /**
      * 订阅所有被@Subscribe修饰的事件处理方法
-     * @param handler 任意的事件处理器，无需实现EventHandler
+     *
+     * @param handler          任意的事件处理器，无需实现EventHandler
      * @param eventHandlerType 该事件处理器的字节码
      */
     @SuppressWarnings("unchecked")

@@ -9,10 +9,10 @@ import java.util.Map;
  * @author Ricky
  * @version 1.0
  * @date 2024/8/8
- * @className UnionFind
+ * @className DisjointSet
  * @desc 并查集
  */
-public class UnionFind<T> {
+public class DisjointSet<T> {
 
     /**
      * 节点集
@@ -21,7 +21,7 @@ public class UnionFind<T> {
      */
     private final Map<T, Node> nodeMap;
 
-    public UnionFind(List<T> elements) {
+    public DisjointSet(List<T> elements) {
         this.nodeMap = new HashMap<>(elements.size());
         for (T element : elements) {
             this.nodeMap.put(element, new Node(element));

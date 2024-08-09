@@ -93,7 +93,7 @@ class EventHandlerTest {
         int singleThread = numOfRequest / numOfThread;
 
         List<OrderPlacedEvent> events = new ArrayList<>();
-        for(int i = 0; i < numOfRequest; ++i) {
+        for (int i = 0; i < numOfRequest; ++i) {
             events.add(new OrderPlacedEvent(String.valueOf(i), 199.99));
         }
 
@@ -106,7 +106,7 @@ class EventHandlerTest {
         for (int i = 0; i < numOfThread; ++i) {
             int finalStartIndex = startIndex;
             threads.add(new Thread(() -> {
-                for(int j = 0; j < singleThread; ++j) {
+                for (int j = 0; j < singleThread; ++j) {
                     eventBus.publish(events.get(j + finalStartIndex));
                 }
             }));

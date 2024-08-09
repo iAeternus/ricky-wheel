@@ -1,6 +1,5 @@
 package com.ricky.common.ddd.mapper;
 
-import com.ricky.common.ddd.model.Book;
 import com.ricky.common.ddd.model.po.BookPO;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;

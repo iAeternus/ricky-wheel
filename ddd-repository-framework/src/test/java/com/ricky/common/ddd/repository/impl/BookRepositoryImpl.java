@@ -3,11 +3,8 @@ package com.ricky.common.ddd.repository.impl;
 import com.ricky.common.ddd.converter.BookDataConverter;
 import com.ricky.common.ddd.mapper.BookImageMapper;
 import com.ricky.common.ddd.mapper.BookMapper;
-import com.ricky.common.ddd.marker.Aggregate;
-import com.ricky.common.ddd.marker.Identifier;
 import com.ricky.common.ddd.model.Book;
 import com.ricky.common.ddd.model.BookId;
-import com.ricky.common.ddd.model.DataBase;
 import com.ricky.common.ddd.model.Image;
 import com.ricky.common.ddd.model.entity.AggregateDifference;
 import com.ricky.common.ddd.model.entity.FieldDifference;
@@ -45,7 +42,7 @@ public class BookRepositoryImpl extends RepositorySupport<Book, BookId> implemen
     @Override
     protected Book doSelect(BookId bookId) {
         BookPO bookPO = bookMapper.selectById(bookId.getValue());
-        if(bookPO == null) {
+        if (bookPO == null) {
             throw new RuntimeException("book不存在, id=" + bookId.getValue());
         }
         return bookDataConverter.convert(bookPO);
@@ -65,7 +62,7 @@ public class BookRepositoryImpl extends RepositorySupport<Book, BookId> implemen
 
     @Override
     protected void doUpdate(Book aggregate, AggregateDifference<Book, BookId> aggregateDifference) {
-        if(aggregateDifference.isSelfModified(Book.class)) {
+        if (aggregateDifference.isSelfModified(Book.class)) {
             BookPO bookPO = bookDataConverter.convert(aggregate);
             bookMapper.updateById(bookPO);
         }
@@ -75,13 +72,13 @@ public class BookRepositoryImpl extends RepositorySupport<Book, BookId> implemen
         fieldDifferences.forEach((fieldName, fieldDifference) -> {
             DifferenceType differenceType = fieldDifference.getDifferenceType();
 
-            if(differenceType == DifferenceType.ADDED) {
+            if (differenceType == DifferenceType.ADDED) {
                 List<Image> images = (List<Image>) fieldDifference.getTracValue();
                 List<BookImagePO> bookImagePOS = CollUtils.listConvert(images, image -> bookDataConverter.convert(image, aggregate.getId().getValue()));
                 bookImageMapper.insertBatch(bookImagePOS);
-            } else if(differenceType == DifferenceType.REMOVED) {
+            } else if (differenceType == DifferenceType.REMOVED) {
                 // fieldDifference.getSnapshotValue()
-            } else if(differenceType == DifferenceType.MODIFIED) {
+            } else if (differenceType == DifferenceType.MODIFIED) {
 
             } else {
 

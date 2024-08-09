@@ -26,7 +26,8 @@ public abstract class RepositorySupport<T extends Aggregate<ID>, ID extends Iden
 
     /**
      * 实际执行修改，无需判空
-     * @param aggregate 聚合
+     *
+     * @param aggregate           聚合
      * @param aggregateDifference 聚合差异
      */
     protected abstract void doUpdate(T aggregate, AggregateDifference<T, ID> aggregateDifference);
@@ -73,7 +74,7 @@ public abstract class RepositorySupport<T extends Aggregate<ID>, ID extends Iden
     @Override
     public void save(@NonNull T aggregate) {
         AggregateDifference<T, ID> aggregateDifference = this.aggregateTracingManager.different(aggregate);
-        if(aggregateDifference == null || aggregateDifference.getDifferentType() == DifferenceType.UNTOUCHED) {
+        if (aggregateDifference == null || aggregateDifference.getDifferentType() == DifferenceType.UNTOUCHED) {
             return;
         }
 

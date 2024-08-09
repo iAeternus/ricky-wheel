@@ -5,15 +5,19 @@
 <mapper namespace="com.ricky.common.ddd.mapper.BookMapper">
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        insert into book (id, book_name, book_desc, words) values (#{id}, #{bookName}, #{bookDesc}, #{words})
+        insert into book (id, book_name, book_desc, words)
+        values (#{id}, #{bookName}, #{bookDesc}, #{words})
     </insert>
 
     <update id="updateById">
         update book
         <set>
-            <if test="bookName != null">book_name = #{bookName},</if>
-            <if test="bookDesc != null">book_desc = #{bookDesc},</if>
-            <if test="words != null">words = #{words},</if>
+            <if test="bookName != null">book_name =
+            #{bookName},</if>
+            <if test="bookDesc != null">book_desc =
+            #{bookDesc},</if>
+            <if test="words != null">words =
+            #{words},</if>
         </set>
         where id = #{id}
     </update>

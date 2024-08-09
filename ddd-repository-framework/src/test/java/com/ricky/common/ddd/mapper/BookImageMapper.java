@@ -1,9 +1,7 @@
 package com.ricky.common.ddd.mapper;
 
-import com.ricky.common.ddd.model.Image;
 import com.ricky.common.ddd.model.po.BookImagePO;
 import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

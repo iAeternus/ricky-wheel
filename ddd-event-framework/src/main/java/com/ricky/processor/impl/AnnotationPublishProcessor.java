@@ -1,10 +1,10 @@
 package com.ricky.processor.impl;
 
 import com.ricky.annotations.Subscribe;
-import com.ricky.processor.PublishProcessor;
 import com.ricky.handler.EventHandler;
 import com.ricky.model.Event;
 import com.ricky.model.SubscribedMethod;
+import com.ricky.processor.PublishProcessor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

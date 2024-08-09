@@ -25,7 +25,7 @@ public class PublishProcessorChain {
 
     public <E extends Event> void publish(E event, EventHandler<? extends Event> handler) {
         for (PublishProcessor processor : processors) {
-            if(processor.invoke(event, handler)) {
+            if (processor.invoke(event, handler)) {
                 // 若成功处理则不再继续
                 break;
             }

@@ -8,12 +8,13 @@
         insert into book_image (book_id, image_url)
         values
         <foreach collection="bookImagePOS" item="bookImagePO" separator=",">
-            (#{bookImagePO.bookId}, #{bookImagePO.imageUrl})
+                (#{bookImagePO.bookId}, #{bookImagePO.imageUrl})
         </foreach>
     </insert>
 
     <insert id="insert">
-        insert into book_image (book_id, image_url) values (#{bookId}, #{imageUrl})
+        insert into book_image (book_id, image_url)
+        values (#{bookId}, #{imageUrl})
     </insert>
 
 </mapper>

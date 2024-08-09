@@ -14,10 +14,11 @@ public interface PublishProcessor {
 
     /**
      * 执行事件发布
-     * @param event 具体事件
+     *
+     * @param event   具体事件
      * @param handler 具体的事件处理器
+     * @param <E>     扩展自领域事件
      * @return 发布成功返回true，否则返回false
-     * @param <E> 扩展自领域事件
      */
     <E extends Event> boolean invoke(E event, EventHandler<? extends Event> handler);
 

@@ -1,8 +1,8 @@
 package com.ricky.processor.impl;
 
-import com.ricky.processor.PublishProcessor;
 import com.ricky.handler.EventHandler;
 import com.ricky.model.Event;
+import com.ricky.processor.PublishProcessor;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
