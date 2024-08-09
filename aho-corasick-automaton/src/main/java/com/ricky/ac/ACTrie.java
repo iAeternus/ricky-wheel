@@ -1,4 +1,4 @@
-package com.ricky;
+package com.ricky.ac;
 
 import java.util.*;
 
