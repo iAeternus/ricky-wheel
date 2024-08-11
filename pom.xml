@@ -26,6 +26,7 @@
         <module>ddd-event-framework</module>
         <module>aho-corasick-automaton</module>
         <module>graph</module>
+        <module>acl</module>
     </modules>
 
     <properties>
