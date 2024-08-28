@@ -27,6 +27,8 @@
         <module>aho-corasick-automaton</module>
         <module>graph</module>
         <module>acl</module>
+        <module>utils</module>
+        <module>job-matching-model</module>
     </modules>
 
     <properties>
