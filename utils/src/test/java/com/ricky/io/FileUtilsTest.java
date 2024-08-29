@@ -1,13 +1,8 @@
 package com.ricky.io;
 
-import com.ricky.io.FileUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 /**
  * @author Ricky
@@ -25,7 +20,7 @@ class FileUtilsTest {
 
         // When
         int count = FileUtils.renameFiles(folderPath, fileName -> {
-            if(fileName.contains("(1)")) {
+            if (fileName.contains("(1)")) {
                 String s = fileName.split("_")[1];
                 String begin = s.substring(0, 2);
                 String end = s.substring(s.length() - 4);

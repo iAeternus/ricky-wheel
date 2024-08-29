@@ -28,7 +28,7 @@
         <module>graph</module>
         <module>acl</module>
         <module>utils</module>
-        <module>job-matching-model</module>
+        <module>ricky-mq</module>
     </modules>
 
     <properties>

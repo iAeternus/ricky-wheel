@@ -14,7 +14,8 @@ import java.time.temporal.ChronoUnit;
  */
 public class InterestUtils {
 
-    private InterestUtils() {}
+    private InterestUtils() {
+    }
 
     /**
      * 默认保留小数位数
@@ -28,10 +29,11 @@ public class InterestUtils {
 
     /**
      * 计算年化利率
+     *
      * @param beginDate 开始日期
-     * @param endDate 截止日期
+     * @param endDate   截止日期
      * @param principal 本金
-     * @param interest 总利息
+     * @param interest  总利息
      * @return 年化利率
      */
     public static BigDecimal calculateInterestRate(LocalDate beginDate, LocalDate endDate, BigDecimal principal, BigDecimal interest) {
@@ -50,9 +52,10 @@ public class InterestUtils {
 
     /**
      * 计算年化利率
+     *
      * @param beginDate 开始日期
      * @param principal 本金
-     * @param interest 总利息
+     * @param interest  总利息
      * @return 年化利率
      */
     public static BigDecimal calculateInterestRate(LocalDate beginDate, BigDecimal principal, BigDecimal interest) {
@@ -61,6 +64,7 @@ public class InterestUtils {
 
     /**
      * 格式化百分数
+     *
      * @param bigDecimal 原数
      * @return 返回一个字符串，表示格式化后的百分数，以%结尾
      */
